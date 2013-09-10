@@ -32,7 +32,7 @@ setup(
     version=version,
     description='Django choices fields driven by PEP435 Enums.',
     long_description=readme + '\n\n' + history,
-    author='Chris Lambacher',
+    author='Christopher Lambacher',
     author_email='chris@kateandchris.net',
     url='https://github.com/tindie/dj-enumfield',
     packages=[
