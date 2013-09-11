@@ -2,6 +2,6 @@
 Usage
 ========
 
-To use dj-enumfield in a project::
+To use django-tidyenum in a project::
 
-	import dj-enumfield
+	import django-tidyenum

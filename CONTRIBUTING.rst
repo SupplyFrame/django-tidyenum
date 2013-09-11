@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/tindie/dj-enumfield/issues.
+Report bugs at https://github.com/tindie/django-tidyenum/issues.
 
 If you are reporting a bug, please include:
 
@@ -36,14 +36,14 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-dj-enumfield could always use more documentation, whether as part of the 
-official dj-enumfield docs, in docstrings, or even on the web in blog posts,
+django-tidyenum could always use more documentation, whether as part of the 
+official django-tidyenum docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/tindie/dj-enumfield/issues.
+The best way to send feedback is to file an issue at https://github.com/tindie/django-tidyenum/issues.
 
 If you are proposing a feature:
 
@@ -55,17 +55,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `dj-enumfield` for local development.
+Ready to contribute? Here's how to set up `django-tidyenum` for local development.
 
-1. Fork the `dj-enumfield` repo on GitHub.
+1. Fork the `django-tidyenum` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/dj-enumfield.git
+    $ git clone git@github.com:your_name_here/django-tidyenum.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv dj-enumfield
-    $ cd dj-enumfield/
+    $ mkvirtualenv django-tidyenum
+    $ cd django-tidyenum/
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -77,7 +77,7 @@ Now you can make your changes locally.
 5. When you're done making changes, check that your changes pass flake8 and the
 tests, including testing other Python versions with tox::
 
-    $ flake8 djenumfield tests
+    $ flake8 tidyenum tests
 	$ python setup.py test
     $ tox
 
@@ -101,7 +101,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.6, 2.7, and 3.3, and for PyPy. Check 
-   https://travis-ci.org/tindie/dj-enumfield/pull_requests
+   https://travis-ci.org/tindie/django-tidyenum/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -109,4 +109,4 @@ Tips
 
 To run a subset of tests::
 
-	$ python -m unittest tests.test_djenumfield
+	$ python -m unittest tests.test_tidyenum

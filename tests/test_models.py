@@ -15,7 +15,7 @@ import unittest
 from tidyenum import models
 
 
-class TestDjenumfield(unittest.TestCase):
+class TestDjangoTidyEnum(unittest.TestCase):
 
     def setUp(self):
         pass
