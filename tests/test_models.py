@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 """
-test_dj-enumfield
+test_django-tidyenum
 ------------
 
-Tests for `dj-enumfield` modules module.
+Tests for `django-tidyenum` modules module.
 """
 
 import os
 import shutil
 import unittest
 
-from djenumfield import models
+from tidyenum import models
 
 
 class TestDjenumfield(unittest.TestCase):

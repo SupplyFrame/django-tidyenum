@@ -117,6 +117,6 @@ try:
                 'default': ['south_default', {}]
             }
         ),
-    ], patterns=["djenumfield\.fields\."])
+    ], patterns=["tidyenum\.fields\."])
 except ImportError:
     pass

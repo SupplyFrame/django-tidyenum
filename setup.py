@@ -4,14 +4,14 @@
 import os
 import sys
 
-import djenumfield
+import tidyenum
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-version = djenumfield.__version__
+version = tidyenum.__version__
 
 requires = []
 if sys.version[:2] < (3, 4):
@@ -28,21 +28,21 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='dj-enumfield',
+    name='django-tidyenum',
     version=version,
     description='Django choices fields driven by PEP435 Enums.',
     long_description=readme + '\n\n' + history,
     author='Christopher Lambacher',
     author_email='chris@kateandchris.net',
-    url='https://github.com/tindie/dj-enumfield',
+    url='https://github.com/tindie/django-tidyenum',
     packages=[
-        'djenumfield',
+        'tidyenum',
     ],
     include_package_data=True,
     install_requires=requires,
     license="BSD",
     zip_safe=False,
-    keywords='dj-enumfield',
+    keywords='django-tidyenum',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Framework :: Django',
