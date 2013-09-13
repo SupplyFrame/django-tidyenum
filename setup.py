@@ -14,7 +14,7 @@ except ImportError:
 version = tidyenum.__version__
 
 requires = []
-if sys.version[:2] < (3, 4):
+if sys.version_info[:2] < (3, 4):
     requires.append('enum34')
 
 if sys.argv[-1] == 'publish':

@@ -5,7 +5,7 @@
 test_django-tidyenum
 ------------
 
-Tests for `django-tidyenum` modules module.
+Tests for `django-tidyenum` models module.
 """
 
 import os
