@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import Enum, _is_dunder
 
 
 class classproperty(object):
@@ -39,6 +39,25 @@ class LabelledEnum(Enum):
     @classproperty
     def _choices(cls):
         return [(x, x.label) for x in cls]
+
+    def __getattr__(self, name):
+        # this allows us to be able to acces all other instances from this
+        # instance:
+        # >>> from tidyenum.labelledenum import LabelledIntEnum
+        #
+        # >>> class MyEnum(LabelledIntEnum):
+        # ...     one = (1, 'one')
+        # ...     two = (2, 'two')
+        # ...     three = (3, 'three')
+        # ...
+        #
+        # >>> MyEnum.one.two
+        # <MyEnum.two: 2>
+        cls = self.__class__
+        try:
+            return cls._member_map_[name]
+        except KeyError:
+            raise AttributeError(name)
 
 
 class LabelledIntEnum(int, LabelledEnum):
