@@ -20,3 +20,6 @@ install:
 # command to run tests, e.g. python setup.py test
 script: 
     - tox -e $TOX_ENV
+
+notifications:
+  email: false
