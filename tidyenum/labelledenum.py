@@ -1,4 +1,11 @@
-from enum import Enum, _is_dunder
+import sys
+
+from enum import Enum
+
+if sys.version_info[:2] < (3, 0):
+    unicode_str = unicode
+else:
+    unicode_str = str
 
 
 class classproperty(object):
@@ -78,7 +85,7 @@ class LabelledIntEnum(int, LabelledEnum):
     """
 
 
-class LabelledUnicodeEnum(unicode, LabelledEnum):
+class LabelledUnicodeEnum(unicode_str, LabelledEnum):
     """
     Base class that allows for the creation of an enum with a unicode value and a label
     using tuples as the Enum values. Example:

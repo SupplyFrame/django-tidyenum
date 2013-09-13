@@ -29,7 +29,6 @@ class LabelledEnum(unittest.TestCase):
 
         self.assertEqual(one.one, one)
         self.assertNotEqual(one.two, one)
-        self.assertEqual(True, False)
 
         self.assertEqual(MyChoice._choices, [(1, 'One'), (2, 'Two')])
 
