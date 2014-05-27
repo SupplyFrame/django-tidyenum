@@ -108,7 +108,9 @@ try:
         (
             (EnumCharField,),
             [],
-            {}
+            {
+                'default': ['south_default', {}]
+            }
         ),
         (
             (EnumIntegerField,),
