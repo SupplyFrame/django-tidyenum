@@ -42,6 +42,16 @@ class EnumFieldMixin(object):
         defaults.update(kwargs)
         super(EnumFieldMixin, self).__init__(*args, **defaults)
 
+    def deconstruct(self):
+        """
+        to support Django 1.7 migrations, see also the add_introspection_rules
+        section at bottom of this file for South + earlier Django versions
+        """
+        name, path, args, kwargs = super(EnumFieldMixin, self).deconstruct()
+        if self.enum:
+            kwargs['enum'] = self.enum
+        return name, path, args, kwargs
+
     def to_python(self, value):
         if self.enum is None:
             return value

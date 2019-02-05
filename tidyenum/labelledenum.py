@@ -45,7 +45,7 @@ class LabelledEnum(Enum):
 
     @classproperty
     def _choices(cls):
-        return [(x, x.label) for x in cls]
+        return [(x.value, x.label) for x in cls]
 
     def __getattr__(self, name):
         # this allows us to be able to acces all other instances from this
