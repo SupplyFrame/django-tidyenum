@@ -3,7 +3,7 @@ Various model fields that mostly provide default field sizes to ensure
 these are consistant when used across multiple models.
 """
 
-from django.db.models import CharField, IntegerField, SubfieldBase
+from django.db.models import CharField, IntegerField
 
 import logging
 
@@ -14,7 +14,6 @@ class EnumFieldMixin(object):
     """
     Mixin for handling Labelled Enum fields
     """
-    __metaclass__ = SubfieldBase
 
     def __init__(self, *args, **kwargs):
         try:
@@ -41,6 +40,10 @@ class EnumFieldMixin(object):
 
         defaults.update(kwargs)
         super(EnumFieldMixin, self).__init__(*args, **defaults)
+
+    def from_db_value(self, value, expression, connection, context):
+        value = self.to_python(value)
+        return value
 
     def deconstruct(self):
         """
