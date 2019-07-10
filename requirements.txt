@@ -1,2 +1,1 @@
-pytest-django
-pytest-cov
+enum34==0.9.19;python_version<"3.4"

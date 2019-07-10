@@ -1,25 +1,8 @@
 #!/usr/bin/env python
 import sys
+import django
 
 from django.conf import settings
-
-
-if not settings.configured:
-    settings.configure(
-        DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': ':memory:',
-            }
-        },
-        INSTALLED_APPS=(
-            'tidyenum',
-        ),
-        SITE_ID=1,
-        SECRET_KEY='this-is-just-for-tests-so-not-that-secret',
-    )
-
-
 from django.test.utils import get_runner
 
 
@@ -31,4 +14,5 @@ def runtests():
 
 
 if __name__ == '__main__':
+    django.setup()
     runtests()

@@ -46,10 +46,6 @@ class EnumFieldMixin(object):
         return value
 
     def deconstruct(self):
-        """
-        to support Django 1.7 migrations, see also the add_introspection_rules
-        section at bottom of this file for South + earlier Django versions
-        """
         name, path, args, kwargs = super(EnumFieldMixin, self).deconstruct()
         if self.enum:
             kwargs['enum'] = self.enum
@@ -59,7 +55,7 @@ class EnumFieldMixin(object):
         if self.enum is None:
             return value
 
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             try:
                 value = self.enum._member_map_[value.split('.')[-1]]
             except (IndexError, KeyError):
@@ -92,10 +88,6 @@ class EnumFieldMixin(object):
 
         return super(EnumFieldMixin, self).formfield(**defaults)
 
-    @property
-    def south_default(self):
-        return getattr(self.default, 'value', self.default)
-
 
 class EnumCharField(EnumFieldMixin, CharField):
     """
@@ -111,27 +103,3 @@ class EnumIntegerField(EnumFieldMixin, IntegerField):
 
     Expects kwarg enum that is a LabelledEnum subclass
     """
-
-
-# South requires custom fields to be given "rules".
-# See http://south.aeracode.org/docs/customfields.html
-try:
-    from south.modelsinspector import add_introspection_rules
-    add_introspection_rules(rules=[
-        (
-            (EnumCharField,),
-            [],
-            {
-                'default': ['south_default', {}]
-            }
-        ),
-        (
-            (EnumIntegerField,),
-            [],
-            {
-                'default': ['south_default', {}]
-            }
-        ),
-    ], patterns=["tidyenum\.fields\."])
-except ImportError:
-    pass
