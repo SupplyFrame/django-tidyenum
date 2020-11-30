@@ -5,6 +5,7 @@ these are consistant when used across multiple models.
 
 from django.db.models import CharField, IntegerField
 from past.builtins import basestring
+from builtins import str as text
 import logging
 
 log = logging.getLogger(__name__)
@@ -57,7 +58,10 @@ class EnumFieldMixin(object):
 
         if isinstance(value, basestring):
             try:
-                value = self.enum._member_map_[value.split('.')[-1]]
+                map = self.enum._member_map_
+                all_values = text(value).split('.')
+                test = all_values[-1]
+                value = map[test]
             except (IndexError, KeyError):
                 pass
 

@@ -1,1 +1,2 @@
-enum34==0.9.19;future==0.17.0;python_version<"3.4"
+future==0.17.0
+enum34==0.9.19;python_version<"3.4"
